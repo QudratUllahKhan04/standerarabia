@@ -22,14 +22,14 @@ function App() {
         </nav> */}
 
         <Routes>
-          <Route path="/Verification" element={<VerificationComp/>} />
+          <Route path="/" element={<VerificationComp/>} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/MenuGride" element={<MenuGride />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Accreditations" element={<Accreditations />} />
-          <Route path="/Feedback" element={<Feedback />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/MenuGride" element={<MenuGride />} /> */}
+          {/* <Route path="/Services" element={<Services />} /> */}
+          {/* <Route path="/About" element={<About />} /> */}
+          {/* <Route path="/Accreditations" element={<Accreditations />} /> */}
+          {/* <Route path="/Feedback" element={<Feedback />} /> */}
 
 
 
