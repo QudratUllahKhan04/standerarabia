@@ -22,7 +22,7 @@ function App() {
         </nav> */}
 
         <Routes>
-          <Route path="/" element={<VerificationComp/>} />
+          <Route path="/verification" element={<VerificationComp/>} />
           <Route path="/contact" element={<Contact />} />
           {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/MenuGride" element={<MenuGride />} /> */}
