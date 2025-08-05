@@ -11,28 +11,28 @@ const handleVerify = async () => {
     return;
   }
 
-  // try {
-  //   const response = await fetch('https://standerbackend.vercel.app/api/verify', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //     },
-  //     body: JSON.stringify({ query: inputValue }) // ✅ make sure it's NOT hardcoded
-  //   });
+  try {
+    const response = await fetch('https://standerbackend-woad.vercel.app/api/verify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ query: inputValue }) // ✅ make sure it's NOT hardcoded
+    });
 
-  //   if (!response.ok) {
-  //     const errorData = await response.json();
-  //     throw new Error(errorData.error || 'Verification failed');
-  //   }
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Verification failed');
+    }
 
-  //   const data = await response.json();
-  //   setResult(data.data);
-  //   setError('');
-  // } catch (err) {
-  //   console.error('Error:', err);
-  //   setError(err.message || 'Failed to connect to the server. Please try again later.');
-  // }
+    const data = await response.json();
+    setResult(data.data);
+    setError('');
+  } catch (err) {
+    console.error('Error:', err);
+    setError(err.message || 'Failed to connect to the server. Please try again later.');
+  }
 };
 
   return (
