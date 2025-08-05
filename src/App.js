@@ -15,16 +15,16 @@ function App() {
     <Router>
       <div>
          <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+          // <ul>
+          //   <li><Link to="/">Home</Link></li>
+          //   <li><Link to="/contact">Contact</Link></li>
+          // </ul>
         </nav> 
 
         <Routes>
           <Route path="/verification" element={<VerificationComp/>} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/" element={<Home />} /> */}
+           <Route path="/" element={<Home />} /> 
           {/* <Route path="/MenuGride" element={<MenuGride />} /> */}
           {/* <Route path="/Services" element={<Services />} /> */}
           {/* <Route path="/About" element={<About />} /> */}
