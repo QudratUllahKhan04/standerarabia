@@ -10,6 +10,7 @@ const handleVerify = async () => {
     setError('Please enter a certificate number');
     return;
   }
+
   try {
     const response = await fetch('https://standerbackend-khaki.vercel.app/api/verify', {
       method: 'POST',
