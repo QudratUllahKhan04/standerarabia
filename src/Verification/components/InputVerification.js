@@ -12,7 +12,7 @@ const handleVerify = async () => {
   }
 
   try {
-    const response = await fetch('https://vercel.com/qudrats-projects-fcdbe6e9/standerbackend/api/verify', {
+    const response = await fetch('https://standerbackend-beta.vercel.app/api/verify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
