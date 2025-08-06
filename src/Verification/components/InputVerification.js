@@ -11,7 +11,7 @@ const handleVerify = async () => {
     return;
   }
   try {
-    const response = await fetch('https://standerbackend-two.vercel.app/api/verify', {
+    const response = await fetch('https://standerbackend-khaki.vercel.app/api/verify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
