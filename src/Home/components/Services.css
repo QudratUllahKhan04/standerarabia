@@ -266,3 +266,34 @@
 
 }
 }
+/* --- Your existing CSS here --- */
+
+/* Fade + slide animation for cards */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card {
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+/* Hover animation for interactivity */
+.service-card-home:hover {
+  transform: translateY(-10px) scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Ensure images also pop slightly on hover */
+.service-card-home:hover .service-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
