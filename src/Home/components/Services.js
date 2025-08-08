@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Services.css";
 import Third from '../../components/assets/third-party-inspection2.webp';
 import lifting from '../../components/assets/lifting-equipment-inspection 2.webp';
@@ -9,12 +9,6 @@ import marine from '../../components/assets/marine-inspection-services.webp';
 import calibration from '../../components/assets/calibration (1).webp';
 import material from '../../components/assets/material-testing-laboratory.webp';
 import { useNavigate } from 'react-router-dom';
-
-
-
-
-
-
 
 const services = [
   { title: "THIRD PARTY INSPECTION", image: Third },
@@ -27,11 +21,14 @@ const services = [
   { title: "MATERIAL TESTING LABORATORY", image: material },
 ];
 
-// ⬇️ Card Component with alternating color support
-const ServiceCard = ({ title, image, variant }) => {
+// Card Component with animations
+const ServiceCard = ({ title, image, variant, delay }) => {
   const isBlue = variant === "blue";
   return (
-    <div className={`service-card-home ${isBlue ? "blue-card" : "gray-card"}`}>
+    <div
+      className={`service-card-home ${isBlue ? "blue-card" : "gray-card"} animate-card`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
       <div className={`service-header ${isBlue ? "gray-header" : "blue-header"}`}>
         {title}
       </div>
@@ -43,10 +40,15 @@ const ServiceCard = ({ title, image, variant }) => {
 };
 
 const Services = () => {
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true); // trigger animation after mount
+  }, []);
+
   return (
-    <div className="services-container">
+    <div className={`services-container ${loaded ? "loaded" : ""}`}>
       <section className="services-header">
         <h3 className="services-subtitle">WHAT WE OFFER</h3>
         <h1 className="services-title">
@@ -59,13 +61,14 @@ const Services = () => {
           <ServiceCard
             key={idx}
             {...service}
-            variant={idx % 2 === 0 ? "blue" : "gray"} // Alternate card colors
+            variant={idx % 2 === 0 ? "blue" : "gray"}
+            delay={idx * 150} // Stagger animation
           />
         ))}
       </div>
 
       <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <button className="see-all-btn"  onClick={() => navigate('/Services')}>
+        <button className="see-all-btn" onClick={() => navigate('/Services')}>
           View All <span className="arrow">↗</span>
         </button>
       </div>
