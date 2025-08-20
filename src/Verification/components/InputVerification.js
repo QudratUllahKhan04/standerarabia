@@ -18,7 +18,7 @@ const handleVerify = async () => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({ query: inputValue }) // ✅ make sure it's NOT hardcoded
+      body: JSON.stringify({ query: inputValue.toUpperCase() }) // ✅ Convert to uppercase
     });
 
     if (!response.ok) {
@@ -34,6 +34,7 @@ const handleVerify = async () => {
     setError(err.message || 'Failed to connect to the server. Please try again later.');
   }
 };
+
 
   return (
     <div className="verify-wrapper">
